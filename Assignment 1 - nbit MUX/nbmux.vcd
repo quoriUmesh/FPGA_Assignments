@@ -1,0 +1,70 @@
+$date
+	Sun Jun 28 23:05:05 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module muxnto1_tb $end
+$var wire 1 ! d_out $end
+$var reg 8 " inp [7:0] $end
+$var reg 3 # sel [2:0] $end
+$var integer 32 $ i [31:0] $end
+$scope module uut $end
+$var wire 8 % inp [7:0] $end
+$var wire 3 & sel [2:0] $end
+$var reg 1 ! d_out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 &
+b10101010 %
+b0 $
+b0 #
+b10101010 "
+0!
+$end
+#100
+1!
+b1 #
+b1 &
+b1 $
+#200
+0!
+b10 #
+b10 &
+b10 $
+#300
+1!
+b11 #
+b11 &
+b11 $
+#400
+0!
+b100 #
+b100 &
+b100 $
+#500
+1!
+b101 #
+b101 &
+b101 $
+#600
+0!
+b110 #
+b110 &
+b110 $
+#700
+1!
+b111 #
+b111 &
+b111 $
+#800
+b1000 $
