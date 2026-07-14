@@ -1,0 +1,57 @@
+$date
+	Tue Jul 14 23:27:29 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module register_file_8x8_tb $end
+$scope module uut $end
+$var wire 1 ! clk $end
+$var wire 3 " readreg1 [2:0] $end
+$var wire 3 # readreg2 [2:0] $end
+$var wire 8 $ regout1 [7:0] $end
+$var wire 8 % regout2 [7:0] $end
+$var wire 1 & rst_n $end
+$var wire 8 ' writedata [7:0] $end
+$var wire 1 ( writeenable $end
+$var wire 3 ) writereg [2:0] $end
+$var integer 32 * i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1000 *
+b0 )
+0(
+b0 '
+0&
+b0 %
+b0 $
+b0 #
+b0 "
+0!
+$end
+#5
+b1000 *
+1!
+#10
+0!
+#12
+1(
+b10100101 '
+b11 )
+1&
+#15
+1!
+#16
+b10100101 $
+b11 "
+0(
+#17
