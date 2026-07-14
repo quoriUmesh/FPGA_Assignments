@@ -1,4 +1,4 @@
-# FPGA and Embedded Design Labs
+# FPGA and Embedded Design Lab Assignments
 
 **Name:** Umesh Khadka  
 **Roll No.:** THA079BEI047
