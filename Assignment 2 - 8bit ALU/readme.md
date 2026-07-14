@@ -1,3 +1,8 @@
+# Assignment 2: * bit ALU
+
+**Name:** Umesh Khadka  
+**Roll No.:** THA079BEI047
+
 <h1>Assignment 2: 8-bit ALU</h1>
 
 <p>
