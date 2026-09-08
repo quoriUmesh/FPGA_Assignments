@@ -39,3 +39,5 @@ The processor waveform generated from the included testbench is available as
 `processor_tb.vcd`. It shows the clock, reset, program counter, instruction
 execution, register writes, memory write, and halt signal for the sample CPU
 program.
+
+![Processor GTKWave preview](../risc_waveform.png)

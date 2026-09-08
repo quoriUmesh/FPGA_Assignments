@@ -5,7 +5,7 @@
 
 ## Overview
 
-This assinment contains a small educational CPU assembled from the lab's 8-bit ALU,
+This assignment contains a small educational CPU assembled from the lab's 8-bit ALU,
 8x8 register file, and instruction memory. It is RISC-V-inspired, not a binary
 compatible RISC-V implementation.
 
@@ -15,6 +15,12 @@ organized into the CPU structure and received minor corrections and
 improvements where needed for integration, including a combinational control
 decoder, consistent register widths, data memory support, and processor control
 signals.
+
+The processor is intentionally small and easy to trace in simulation. It uses a
+single-cycle datapath: one instruction is fetched, decoded, executed, and
+committed on each clock cycle. The design uses 8-bit data values, eight general
+purpose registers, a 4-bit program counter, 16 instruction words, and 16 bytes
+of data memory.
 
 ## Folder structure
 
@@ -44,6 +50,36 @@ six-bit immediate in `[5:0]`.
 `0000` ADD, `0001` SUB, `0010` AND, `0011` OR, `0100` XOR, `0101` ADDI,
 `0110` LD, `0111` ST, `1000` BEQ, `1001` JUMP, and `1111` HALT.
 
+### Instruction summary
+
+| Opcode | Instruction | Description |
+| --- | --- | --- |
+| `0000` | `ADD` | Add two registers and write the result to `rd` |
+| `0001` | `SUB` | Subtract `rs2` from `rs1` and write to `rd` |
+| `0010` | `AND` | Bitwise AND of two registers |
+| `0011` | `OR` | Bitwise OR of two registers |
+| `0100` | `XOR` | Bitwise XOR of two registers |
+| `0101` | `ADDI` | Add a signed six-bit immediate to `rs1` |
+| `0110` | `LD` | Load data memory using `rs1 + immediate` |
+| `0111` | `ST` | Store `rd` into data memory using `rs1 + immediate` |
+| `1000` | `BEQ` | Branch by the immediate when the two operands are equal |
+| `1001` | `JUMP` | Jump to the four-bit instruction address |
+| `1111` | `HALT` | Stop instruction execution |
+
+Register 0 is reset to zero like every other register in this basic student
+implementation; programs can use registers `r0` through `r7`. Memory arrays
+are initialized or loaded by the testbench, which keeps the design simple for
+simulation and classroom experimentation.
+
+## Datapath operation
+
+The program counter addresses the instruction memory. The control unit decodes
+the current instruction and selects register operands, the ALU operation,
+memory access, and the next program-counter value. The register file has two
+asynchronous read ports and one synchronous write port. Loads select data
+memory output as the register write data, while stores write the second operand
+to data memory on the active clock edge.
+
 ## Testbench and waveform
 
 Each core has a corresponding testbench. The testbenches generate VCD waveform
@@ -53,6 +89,15 @@ register 3, stores it in data memory address 1, and then halts.
 
 The included waveform is `testbenches/processor_tb.vcd`. It can be opened after
 simulation with GTKWave.
+
+### Processor waveform preview
+
+The following image was captured from the included processor waveform. It shows
+the clocked execution of the sample instructions `ADDI`, `ADD`, `ST`, and
+`HALT`, including the instruction bus, register addresses, ALU-related control
+signals, and write data.
+
+![Student RISC-V processor waveform](risc_waveform.png)
 
 ## Compile and simulate
 
