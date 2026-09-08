@@ -1,0 +1,94 @@
+$date
+	Tue Sep 08 22:39:48 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module cu_tb $end
+$var wire 3 ! writereg [2:0] $end
+$var wire 1 " writeenable $end
+$var wire 3 # readreg2 [2:0] $end
+$var wire 3 $ readreg1 [2:0] $end
+$var wire 1 % memory_write $end
+$var wire 1 & memory_read $end
+$var wire 1 ' jump $end
+$var wire 8 ( immediate [7:0] $end
+$var wire 1 ) halt $end
+$var wire 1 * branch_equal $end
+$var wire 1 + alu_uses_immediate $end
+$var wire 4 , alu_op [3:0] $end
+$var reg 16 - instruction [15:0] $end
+$scope module dut $end
+$var wire 16 . instruction [15:0] $end
+$var wire 4 / opcode [3:0] $end
+$var reg 4 0 alu_op [3:0] $end
+$var reg 1 + alu_uses_immediate $end
+$var reg 1 * branch_equal $end
+$var reg 1 ) halt $end
+$var reg 8 1 immediate [7:0] $end
+$var reg 1 ' jump $end
+$var reg 1 & memory_read $end
+$var reg 1 % memory_write $end
+$var reg 3 2 readreg1 [2:0] $end
+$var reg 3 3 readreg2 [2:0] $end
+$var reg 1 " writeenable $end
+$var reg 3 4 writereg [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 4
+b0 3
+b0 2
+b101 1
+b0 0
+b101 /
+b101001000000101 .
+b101001000000101 -
+b0 ,
+1+
+0*
+0)
+b101 (
+0'
+0&
+0%
+b0 $
+b0 #
+1"
+b1 !
+$end
+#1
+1%
+b11 #
+b11 3
+1+
+b1 (
+b1 1
+0"
+b11 !
+b11 4
+b111 /
+b111011000000001 -
+b111011000000001 .
+#2
+1)
+0%
+0+
+b0 (
+b0 1
+b0 !
+b0 4
+b0 #
+b0 3
+b1111 /
+b1111000000000000 -
+b1111000000000000 .
+#3
