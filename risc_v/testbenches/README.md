@@ -1,8 +1,8 @@
 # RISC-V-style CPU Testbenches
 
-These testbenches follow the waveform-oriented style used in the previous FPGA
-assignments. Relevant testbench structure was reused from those assignments,
-with minor corrections and improvements for the integrated student CPU.
+These testbenches follow the waveform-oriented simulation style used in the
+previous FPGA assignments and verify the processor modules independently and
+as an integrated datapath.
 
 Each testbench is self-contained and targets one module from `../top_modules_cores/`:
 

@@ -1,20 +1,19 @@
-# Assignment 5: Student RISC-V-style CPU
+# Assignment 5: RISC-V-style Processor Implementation
 
 **Name:** Umesh Khadka  
 **Roll No.:** THA079BEI047
 
 ## Overview
 
-This assignment contains a small educational CPU assembled from the lab's 8-bit ALU,
+This assignment presents a small educational CPU assembled from the lab's 8-bit ALU,
 8x8 register file, and instruction memory. It is RISC-V-inspired, not a binary
 compatible RISC-V implementation.
 
-This implementation reuses relevant modules from the previous assignments,
-including the ALU, instruction memory, and register file. Those modules were
-organized into the CPU structure and received minor corrections and
-improvements where needed for integration, including a combinational control
+The implementation is based on relevant modules developed in the previous
+assignments, including the ALU, instruction memory, and register file. These
+modules were adapted to the processor interface, with a combinational control
 decoder, consistent register widths, data memory support, and processor control
-signals.
+signals added for the complete datapath.
 
 The processor is intentionally small and easy to trace in simulation. It uses a
 single-cycle datapath: one instruction is fetched, decoded, executed, and
@@ -34,9 +33,9 @@ The core files are `processor.v`, `cu.v`, `instruction_memory.v`,
 
 - `top_modules_cores/processor.v` - single-cycle processor and program counter
 - `top_modules_cores/cu.v` - instruction decoder and control signals
-- `top_modules_cores/alu.v` - reused and locally integrated 8-bit ALU
-- `top_modules_cores/register_file_8x8.v` - reused 8x8 register file
-- `top_modules_cores/instruction_memory.v` - reused 16-word instruction memory
+- `top_modules_cores/alu.v` - 8-bit ALU based on Assignment 2
+- `top_modules_cores/register_file_8x8.v` - 8x8 register file based on Assignment 3
+- `top_modules_cores/instruction_memory.v` - 16-word instruction memory based on Assignment 3
 - `top_modules_cores/data_memory.v` - 16-byte read/write data memory
 - `testbenches/` - module-level and processor-level testbenches
 - `testbenches/processor_tb.vcd` - generated processor waveform for GTKWave
@@ -66,8 +65,8 @@ six-bit immediate in `[5:0]`.
 | `1001` | `JUMP` | Jump to the four-bit instruction address |
 | `1111` | `HALT` | Stop instruction execution |
 
-Register 0 is reset to zero like every other register in this basic student
-implementation; programs can use registers `r0` through `r7`. Memory arrays
+Register 0 is reset to zero like every other register in this implementation;
+programs can use registers `r0` through `r7`. Memory arrays
 are initialized or loaded by the testbench, which keeps the design simple for
 simulation and classroom experimentation.
 
@@ -97,7 +96,7 @@ the clocked execution of the sample instructions `ADDI`, `ADD`, `ST`, and
 `HALT`, including the instruction bus, register addresses, ALU-related control
 signals, and write data.
 
-![Student RISC-V processor waveform](risc_waveform.png)
+![RISC-V processor waveform](risc_waveform.png)
 
 ## Compile and simulate
 

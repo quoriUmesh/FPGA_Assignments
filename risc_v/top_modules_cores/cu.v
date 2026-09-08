@@ -1,6 +1,6 @@
 `timescale 1ps/1ps
 
-// Combinational decoder for the small 8-bit student CPU.
+// Combinational decoder for the small 8-bit processor.
 module control_unit(
   input wire [15:0] instruction,
   output reg [2:0] readreg1,

@@ -1,11 +1,11 @@
 # Top Modules and Cores
 
-This folder contains the synthesizable modules for the student RISC-V-style CPU:
+This folder contains the synthesizable modules for the RISC-V-style processor:
 
-The ALU, instruction memory, and register file are relevant modules reused from
-the previous FPGA assignments. They were integrated with minor corrections and
-improvements to make their widths and control interfaces consistent with the
-student processor.
+The ALU, instruction memory, and register file are based on relevant modules
+from the previous FPGA assignments. Their interfaces are adapted for this
+processor and combined with the control unit, processor datapath, and data
+memory.
 
 - `processor.v`: top-level single-cycle processor
 - `cu.v`: control unit / instruction decoder
